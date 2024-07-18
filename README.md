@@ -11,10 +11,10 @@ A flutter weather forecast mobile application, offering real-time weather update
 - *Specified Search*: Integrated search functionality allowing users to input city names and retrieve weather info instantly.
 - *Local Assets*: Used image assets to visually represent different weather conditions such as sunny, rainy, and cloudy.
 
-## Update
-New uploaded version of the app built using BLoC State Management rather than Provider.
-
 ## Resources
 
 Used API(s) in the app:
 - [WeatherAPI](https://www.weatherapi.com/)
+
+## Update
+New uploaded version of the app built using BLoC State Management rather than Provider.
