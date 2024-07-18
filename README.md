@@ -16,4 +16,5 @@ New uploaded version of the app built using BLoC State Management rather than Pr
 
 ## Resources
 
-- [WeatherAPI](https://)
+Used API(s) in the app:
+- [WeatherAPI](https://www.weatherapi.com/)
