@@ -19,5 +19,5 @@ Used API(s) in the app:
 ## Update
 - New uploaded version of the app built using BLoC State Management rather than Provider.
 - New features is added as choosing temperature type Celsius(°C) or Fahrenheit(°F).
-- Handles issues and fixed bugs.
+- Handle issues and fix bugs.
 - Made the code more organized.
