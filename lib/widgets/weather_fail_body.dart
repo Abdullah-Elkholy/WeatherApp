@@ -3,9 +3,7 @@ import 'package:flutter_application/cubit/weather_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class WeatherFailureBody extends StatelessWidget {
-  const WeatherFailureBody({
-    super.key,
-  });
+  const WeatherFailureBody({super.key});
 
   @override
   Widget build(BuildContext context) {
