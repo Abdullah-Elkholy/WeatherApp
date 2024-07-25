@@ -1,6 +1,6 @@
 # Weather Forecast App
 
-•	A Flutter mobile weather forecast app that provides real-time weather updates for specified cities, involving modern state management and theming techniques to enhance user experience.
+A Flutter mobile weather forecast app that provides real-time weather updates for specified cities, involving modern state management and theming techniques to enhance user experience.
 
 ## Brief Explanation
 
