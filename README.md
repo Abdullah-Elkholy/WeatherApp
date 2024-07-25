@@ -17,6 +17,6 @@ Used API(s) in the app:
 - [WeatherAPI](https://www.weatherapi.com/)
 
 ## Update
-- New features is added as choosing temperature type Celsius(°C) or Fahrenheit(°F).
-- Handle issues and fix bugs.
-- Made the code more organized.
+- New features are added like choosing temperature type Celsius(°C) or Fahrenheit(°F).
+- Handle issues, edge cases and fix bugs.
+- Made the code more organized and imroved readability.
