@@ -10,7 +10,7 @@ class SearchView extends StatefulWidget {
 }
 
 class _SearchViewState extends State<SearchView> {
-  String temperatureType = '°C';
+  String temperatureType = '°C'; // Default temperature
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +31,7 @@ class _SearchViewState extends State<SearchView> {
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 labelText: 'City Name',
-                hintText: 'Enter your city name',
+                hintText: 'e.g. New York',
               ),
               onSubmitted: (cityName) {
                 BlocProvider.of<WeatherCubit>(context).getWeather(
@@ -41,27 +41,51 @@ class _SearchViewState extends State<SearchView> {
             ),
             Row(
               children: [
-                Radio(
-                  value: '°C',
-                  groupValue: temperatureType,
-                  onChanged: (value) {
+                GestureDetector(
+                  onTap: () {
                     setState(() {
-                      temperatureType = value!;
+                      temperatureType = '°C';
                     });
                   },
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Radio(
+                        value: '°C',
+                        groupValue: temperatureType,
+                        onChanged: (value) {
+                          setState(() {
+                            temperatureType = value!;
+                          });
+                        },
+                      ),
+                      Text('Celsius (°C)'),
+                    ],
+                  ),
                 ),
-                Text('Celsius (°C)'),
                 SizedBox(width: 12),
-                Radio(
-                  value: '°F',
-                  groupValue: temperatureType,
-                  onChanged: (value) {
+                GestureDetector(
+                  onTap: () {
                     setState(() {
-                      temperatureType = value!;
+                      temperatureType = '°F';
                     });
                   },
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Radio(
+                        value: '°F',
+                        groupValue: temperatureType,
+                        onChanged: (value) {
+                          setState(() {
+                            temperatureType = value!;
+                          });
+                        },
+                      ),
+                      Text('Fahrenheit (°F)'),
+                    ],
+                  ),
                 ),
-                Text('Fahrenheit (°F)'),
               ],
             ),
           ],
@@ -70,65 +94,3 @@ class _SearchViewState extends State<SearchView> {
     );
   }
 }
-
-// class MyStatefulWidget extends StatefulWidget {
-//   const MyStatefulWidget({super.key});
-
-//   @override
-//   _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
-// }
-
-// class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-//   var _site = '°C';
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Padding(
-//         padding: const EdgeInsets.symmetric(horizontal: 8),
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: [
-//             TextField(
-//               decoration: const InputDecoration(
-//                 border: OutlineInputBorder(),
-//                 labelText: 'City Name',
-//                 hintText: 'Enter your city name',
-//               ),
-//               onSubmitted: (cityName) {
-//                 BlocProvider.of<WeatherCubit>(context)
-//                     .getWeather(city: cityName);
-//                 Navigator.pop(context);
-//               },
-//             ),
-//             Row(
-//               children: [
-//                 Radio(
-//                   value: '°C',
-//                   groupValue: _site,
-//                   onChanged: (value) {
-//                     setState(() {
-//                       _site = value!;
-//                     });
-//                   },
-//                 ),
-//                 Text('°Celsius'),
-//                 SizedBox(width: 12),
-//                 Radio(
-//                   value: '°F',
-//                   groupValue: _site,
-//                   onChanged: (value) {
-//                     setState(() {
-//                       _site = value!;
-//                     });
-//                   },
-//                 ),
-//                 Text('°Fahrenheit'),
-//               ],
-//             ),
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
