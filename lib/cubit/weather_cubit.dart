@@ -14,10 +14,15 @@ class WeatherCubit extends Cubit<WeatherState> {
     try {
       weatherModel = await GetWeatherService(Dio())
           .getCurrentWeather(cityName: city, temperatureType: temperatureType);
-      emit(WeatherLoadedState());
+      emit(WeatherLoadedState(weatherModel));
     } catch (e) {
+      if (e.toString().runtimeType == TypeError) {
+        error = 'Please check your internet connection.'; // networkErrMessage
+      } else {
+        error = e.toString();
+      }
+
       emit(WeatherFailureState());
-      error = e.toString();
     }
   }
 }
