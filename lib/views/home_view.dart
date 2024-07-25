@@ -15,7 +15,7 @@ class WeatherApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        elevation: 4,
         title: const Text('Weather App'),
         actions: [
           IconButton(
@@ -42,8 +42,9 @@ class WeatherApp extends StatelessWidget {
             return WeatherFailureBody();
           } else {
             return Text(
-              'Oops, There was an unexpected error, please try again later',
+              'Oops, There was an unexpected error,\nplease try again later...',
               maxLines: 2,
+              overflow: TextOverflow.ellipsis,
             );
           }
         },
